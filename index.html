@@ -307,11 +307,36 @@
         height: 160px;
       }
     }
+    .btn-kembali {
+  position: absolute;
+  top: 20px;       /* jarak dari atas */
+  left: 20px;      /* jarak dari kiri */
+  background: #fff;
+  border: 2px solid #c60000;
+  color: #c60000;
+  font-weight: 600;
+  border-radius: 30px;
+  padding: 8px 18px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
+
+.btn-kembali:hover {
+  background: #c60000;
+  color: #fff;
+  box-shadow: 0 4px 10px rgba(198, 0, 0, 0.3);
+}
   </style>
 </head>
 <body>
   <div class="container">
     <header>
+         <a href="https://ivanharry203.github.io/websitetelkomintern/web_mark_kordinat/dashboard.html" class="btn-kembali" onclick="history.back()">
+      ← Kembali
+    </a>
       <h1>Cetak Dokumen UIM Terminasi</h1>
       <div class="top-actions">
         <div class="olt-input-container">
