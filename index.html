@@ -535,7 +535,7 @@
 
       const packer = new Packer();
       const blob = await docx.Packer.toBlob(doc);
-      const fname = `UIM-Terminiasi-${olt}.docx`;
+      const fname = `UIM-TERMINASI-${olt}.docx`;
       const url = URL.createObjectURL(blob);
       const a = document.createElement('a'); a.href = url; a.download = fname; document.body.appendChild(a); a.click(); a.remove(); URL.revokeObjectURL(url);
     }
@@ -576,3 +576,4 @@
   </script>
 </body>
 </html>
+
