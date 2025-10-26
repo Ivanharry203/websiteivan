@@ -341,7 +341,7 @@
       <div class="top-actions">
         <div class="olt-input-container">
           <label for="nama-olt">Nama LOP</label>
-          <input id="nama-olt" type="text" placeholder="Contoh: PT3-25-MGE-FAF " pattern="[A-Za-z0-9-]+" />
+          <input id="nama-olt" type="text" placeholder="Contoh: PT3-25-MGE-FAF "  />
         </div>
         <div class="controls">
           <button id="btn-restart" class="ghost">Restart</button>
@@ -410,7 +410,6 @@
         input.className='odp-name'; 
         input.value=c.odpName;
         input.placeholder='Contoh: ODP-01'; 
-        input.pattern='[A-Za-z0-9-]+';
         input.addEventListener('input', (e)=>{ c.odpName = e.target.value; });
 
         const drop = document.createElement('div'); 
@@ -499,8 +498,6 @@
       // validate OLT
       const olt = namaOlt.value.trim();
       if(!olt){ alert('Silakan isi Nama OLT.'); namaOlt.focus(); return; }
-      if(!/^[A-Za-z0-9-]+$/.test(olt)){ alert('Nama OLT hanya boleh huruf, angka, dan tanda - (tanpa spasi).'); namaOlt.focus(); return; }
-
       // prepare doc
       const { Document, Packer, Paragraph, HeadingLevel, TextRun, ImageRun } = docx;
       const doc = new Document({ sections: [] });
@@ -508,9 +505,9 @@
 
       // for each card, validate name
       for(const c of cards){
-        if(!c.odpName || !/^[A-Za-z0-9-]+$/.test(c.odpName)){
-          alert('Semua Nama ODP harus terisi dan hanya boleh huruf, angka, dan tanda - (tanpa spasi).');
-          return;
+       if(!c.odpName){
+    alert('Semua Nama ODP harus diisi.');
+    return;
         }
       }
 
@@ -576,4 +573,5 @@
   </script>
 </body>
 </html>
+
 
